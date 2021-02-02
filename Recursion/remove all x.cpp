@@ -23,12 +23,32 @@ void removeX(char input[]) {
         return removeX(input);
     }
 }
-
+void removeX1(char str[])
+{
+    if(str[0]=='\0')
+    {
+        return;
+    }
+    if(str[0]!='x')
+    {
+        removeX1(str+1);
+    }
+    else
+    {
+        int i=1;
+        for( ;str[i]!='\0';i++)
+        {
+            str[i-1]=str[i];
+        }
+        str[i-1]=str[i];
+        removeX1(str);
+    }
+}
 
 int main()
 {
     char str[10]="cxsxd";
-    removeX(str);
+    removeX1(str);
 
     cout<<str;
 }
