@@ -33,6 +33,50 @@ int* sort012(int arr[],int n)
 
     return arr;
 }
+void dutchNationalFlag01(vector<int>& vec)
+{
+    int s=0,e=vec.size()-1;
+    while(s<=e)
+    {
+        while(vec[s]==0)
+        {
+            s++;
+        }
+        while(vec[e]==1)
+        {
+            e--;
+        }
+        if(s<=e)
+        {
+            swap(vec[s],vec[e]);
+            s++;
+            e--;
+        }
+    }
+}
+
+void dutchNationalFlag012(vector<int>& vec)
+{
+    int zp=0,op=0,tp=vec.size()-1;
+    while(op<=tp)
+    {
+        switch(vec[op])
+        {
+        case 0:
+            swap(vec[zp],vec[op]);
+            zp++;
+            op++;
+            break;
+        case 1:
+            op++;
+            break;
+        case 2:
+            swap(vec[tp],vec[op]);
+            tp--;
+            break;
+        }
+    }
+}
 int main()
 {
     int arr[6]={1,2,0,1,1,2};
