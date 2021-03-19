@@ -78,16 +78,16 @@ void mergeTwoSortedArr1(int arr[],int si,int mid,int ei)
 }
 int main()
 {
-    int a[9]={-1,1,4,6,9,0,3,5,7};
-    int b[5]={0,3,4,6,8};
-    int c[10];
+    int a[5]={0,0,0,0,0};
+    int b[7]={-1,0,0,0,0,0,1};
+    int c[12];
     int n1=sizeof(a)/sizeof(a[0]);
     int n2=sizeof(b)/sizeof(b[0]);
-    mergeTwoSortedArr1(a,0,4,8);
+    mergeTwoSortedArr(a,b,c,n1,n2);
 
-    for(int i=0;i<9;i++)
+    for(int i=0;i<12;i++)
     {
-        cout<<a[i]<<"  ";
+        cout<<c[i]<<"  ";
     }
 }
 
